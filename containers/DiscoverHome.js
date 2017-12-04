@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
+import TabDiscover from '../components/TabDiscover.js';
 
 export default class DiscoverHome extends React.Component {
   render() {
@@ -19,6 +20,7 @@ export default class DiscoverHome extends React.Component {
             <Text style={styles.playText}> Multiplayer </Text>
           </TouchableOpacity>
         </View>
+        <TabDiscover/>
       </View>
     );
   }
@@ -33,13 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    height: verticalScale(667-70),
+    height: verticalScale(667-70-50),
     width: scale(375),
   },
   backgroundColor: {
     top: verticalScale(0),
     position: 'absolute',
-    height: verticalScale(667-70),
+    height: verticalScale(667-70-50),
     width: scale(375)
   },
   eatText: {
