@@ -7,6 +7,8 @@ import Register from './containers/Register.js';
 import DiscoverHome from './containers/DiscoverHome.js';
 import Eats1 from './containers/Eats1.js';
 import Eats2 from './containers/Eats2.js';
+import ListResults from './containers/ListResults.js';
+import SingleResult from './containers/SingleResult.js';
 
 export default class App extends React.Component {
   render() {
@@ -19,6 +21,8 @@ export default class App extends React.Component {
           <Scene key="discover" component={DiscoverHome} hideNavBar={true}/>
           <Scene key="eats1" component={Eats1} hideNavBar={true}/>
           <Scene key="eats2" component={Eats2} hideNavBar={true}/>
+          <Scene key="listresults" component={ListResults} hideNavBar={true}/>
+          <Scene key="singleresult" component={SingleResult} hideNavBar={true}/>
         </Scene>
       </Router>
     );
