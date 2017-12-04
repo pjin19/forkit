@@ -26,7 +26,7 @@ export default class Login extends React.Component {
             </TouchableOpacity>
           </View>
           <View style={styles.buttonForm}>
-            <TouchableOpacity style={styles.loginButton}>
+            <TouchableOpacity style={styles.loginButton} onPress={Actions.listresults}>
               <Text style={styles.loginText}> SIGN IN </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fbButton}>
