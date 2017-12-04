@@ -11,38 +11,30 @@ export default class Eats1 extends React.Component {
       <View style={styles.container}>
         <Navbar/>
         <View style={styles.background}>
-          <Image style={styles.backgroundColor} source={require("../assets/DiscoverEat-2.png")}/>
+          <Image style={styles.backgroundColor} source={require("../assets/DiscoverEat-3.png")}/>
           <View style={styles.topTile}>
             <View style={styles.rowSubContainer}>
               <Dash dashGap={0} dashColor={'white'} style={{width:scale(35), height:verticalScale(1), right:scale(5) }}/>
               <Text style={styles.timer}> 00:10 </Text>
               <Dash dashGap={0} dashColor={'white'} style={{width:scale(35), height:verticalScale(1), left:scale(5) }}/>
             </View>
-            <Text style={styles.topText}>What type of cuisine?</Text>
+            <Text style={styles.topText}>How far away you wanna go?</Text>
           </View>
-          <View style={styles.colSubContainer}>
-            <View style={styles.rowSubContainer}>
-              <TouchableOpacity style={styles.optionLeft}>
-                <Image style={styles.mexican} source={require("../assets/taco.png")}/>
-                <Text style={styles.optionText}>Mexican</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.optionRight}>
-                <Image style={styles.japanese} source={require("../assets/japanese.png")}/>
-                <Text style={styles.optionText}>Japanese</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.rowSubContainer}>
-              <TouchableOpacity style={styles.optionLeft}>
-                <Image style={styles.american} source={require("../assets/american.png")}/>
-                <Text style={styles.optionText}>American</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.optionRight}>
-                <Image style={styles.italian} source={require("../assets/italian.png")}/>
-                <Text style={styles.optionText}>Italian</Text>
-              </TouchableOpacity>
-            </View>
+          <View style={styles.rowSubContainer}>
+            <TouchableOpacity style={styles.optionLeft}>
+              <View style={styles.rowSubContainer}>
+                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
+                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
+                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
+              </View>
+              <Text style={styles.optionText}>Less than 1 mile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.optionRight}>
+              <Image style={styles.car} source={require("../assets/carWhite.png")}/>
+              <Text style={styles.optionText}>1 to 3 miles</Text>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity style={[styles.optionBottom, styles.rowSubContainer]} onPress={Actions.eats3}>
+          <TouchableOpacity style={[styles.optionBottom, styles.rowSubContainer]} onPress={Actions.eats2}>
             <Text style={styles.gambleText}> Take a Gamble </Text>
             <Image style={styles.dollarSigns} source={require("../assets/red-dice-512.png")}/>
           </TouchableOpacity>
@@ -75,8 +67,6 @@ const styles = StyleSheet.create({
     width: scale(375),
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomWidth: moderateScale(1),
-    borderBottomColor: 'white',
   },
   topText: {
     fontSize: scale(45),
@@ -89,56 +79,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  colSubContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   timer: {
     fontSize: moderateScale(45),
     color: 'white',
     fontFamily: 'Futura'
   },
   optionLeft: {
-    borderTopWidth: moderateScale(1),
+    borderTopWidth: moderateScale(2),
     borderTopColor: 'white',
     borderBottomWidth: moderateScale(1),
     borderBottomColor: 'white',
     borderRightWidth: moderateScale(1),
     borderRightColor: 'white',
-    height: verticalScale(105),
+    height: verticalScale(210),
     width: scale(375/2),
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  mexican: {
-    height: verticalScale(55),
-    width: scale(75)
-  },
-  japanese: {
-    height: verticalScale(55),
-    width: scale(65)
-  },
-  american: {
-    height: verticalScale(35),
-    width: scale(70),
-    marginTop: verticalScale(10),
-    marginBottom: verticalScale(10)
-  },
-  italian: {
-    height: verticalScale(35),
-    width: scale(80),
-    marginTop: verticalScale(10),
-    marginBottom: verticalScale(10)
+
   },
   optionRight: {
-    borderTopWidth: moderateScale(1),
+    borderTopWidth: moderateScale(2),
     borderTopColor: 'white',
     borderBottomWidth: moderateScale(1),
     borderBottomColor: 'white',
     borderLeftWidth: moderateScale(1),
     borderLeftColor: 'white',
-    height: verticalScale(105),
+    height: verticalScale(210),
     width: scale(375/2),
     justifyContent: 'center',
     alignItems: 'center',
@@ -146,7 +112,18 @@ const styles = StyleSheet.create({
   optionText: {
     fontFamily: 'Futura',
     color: 'white',
-    fontSize: moderateScale(30)
+    textAlign: 'center',
+    fontSize: moderateScale(35),
+    marginLeft: moderateScale(10),
+    marginRight: moderateScale(10)
+  },
+  hiker: {
+    height: verticalScale(70),
+    width: scale(50)
+  },
+  car: {
+    height: verticalScale(75),
+    width: scale(100)
   },
   dollarSigns: {
     height: verticalScale(35),
