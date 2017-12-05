@@ -11,6 +11,7 @@ export default class SingleResult extends React.Component {
     return (
       <View style={styles.container}>
         <Navbar/>
+        <TabDiscover/>
         <View style={styles.background}>
           <Image style={styles.backgroundColor} source={require("../assets/discoverHome.png")}/>
           <View style={styles.nameContainer}>
