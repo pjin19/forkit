@@ -72,7 +72,7 @@ export default class SingleResult extends React.Component {
             </TouchableOpacity>
           </View>
           <View style={styles.goContainer}>
-            <TouchableOpacity style={styles.fork}>
+            <TouchableOpacity style={styles.fork} onPress={Actions.resultlightbox}>
               <Text>Fork It</Text>
             </TouchableOpacity>
           </View>
