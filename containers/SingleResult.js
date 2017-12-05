@@ -3,18 +3,18 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
-import Tab from '../components/Tab.js';
+import TabDiscover from '../components/TabDiscover.js';
 
 export default class Eats1 extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Navbar/>
-        <Tab/>
+        <TabDiscover/>
         <View style={styles.background}>
           <Image style={styles.backgroundColor} source={require("../assets/discoverHome.png")}/>
         </View>
-        <Tab/>
+        <TabDiscover/>
       </View>
     );
   }

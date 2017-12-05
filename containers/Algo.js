@@ -41,9 +41,9 @@ export default class Algo extends React.Component {
           <Animated.Image
             style={{
               opacity,
-              height: verticalScale(300),
-              width: scale(325),
-              bottom: verticalScale(50)}}
+              height: verticalScale(350),
+              width: scale(350),
+              bottom: verticalScale(30)}}
               resizeMode={'contain'}
               source={require("../assets/algo.png")}/>
         </View>
