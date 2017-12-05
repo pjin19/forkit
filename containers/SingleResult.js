@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
-import TabDiscover from '../components/TabDiscover.js';
 import {MapView} from 'expo';
 
 export default class SingleResult extends React.Component {
@@ -77,7 +76,6 @@ export default class SingleResult extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-        <TabDiscover/>
       </View>
     );
   }
