@@ -12,7 +12,7 @@ export default class MinibarResults extends React.Component {
           <Text style={styles.minibarText}>Results</Text>
           <Dash dashGap={0} dashColor={'#F63535'} style={{width:scale(55), height:verticalScale(1), top: verticalScale(2)}}/>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.subContainer}>
+        <TouchableOpacity style={styles.subContainer} onPress={Actions.listmap}>
           <Text style={styles.minibarText}>Map It</Text>
         </TouchableOpacity>
       </View>

@@ -4,11 +4,11 @@ import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Dash from 'react-native-dash';
 
-export default class MinibarResults extends React.Component {
+export default class MinibarMap extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.subContainer}>
+        <TouchableOpacity style={styles.subContainer} onPress={Actions.listresults}>
           <Text style={styles.minibarText}>Results</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.subContainer}>

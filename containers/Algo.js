@@ -37,7 +37,9 @@ export default class Algo extends React.Component {
         <Navbar/>
         <View style={styles.background}>
           <Image style={styles.backgroundColor} source={require("../assets/Discover.png")}/>
-          <Image style={styles.logotext} source={require("../assets/DesktopCopy3trans.png")}/>
+          <TouchableOpacity onPress={Actions.listresults}>
+            <Image style={styles.logotext} source={require("../assets/DesktopCopy3trans.png")}/>
+          </TouchableOpacity>
           <Animated.Image
             style={{
               opacity,
