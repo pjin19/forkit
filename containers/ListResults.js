@@ -3,14 +3,14 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
-import Tab from '../components/Tab.js';
+import TabDiscover from '../components/TabDiscover.js';
 
-export default class Eats1 extends React.Component {
+export default class ListResults extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Navbar/>
-        <Tab/>
+        <TabDiscover/>
         <View style={styles.background}>
           <Image style={styles.backgroundColor} source={require("../assets/discoverHome.png")}/>
           <View style={styles.listContainer}>
@@ -84,7 +84,7 @@ export default class Eats1 extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-        <Tab/>
+        <TabDiscover/>
       </View>
     );
   }
@@ -99,13 +99,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: 'transparent',
-    height: verticalScale(667-210),
+    height: verticalScale(667-70-50-50),
     width: scale(375)
   },
   backgroundColor: {
     top: verticalScale(0),
     position: 'absolute',
-    height: verticalScale(667-210),
+    height: verticalScale(667-70-50-50),
     width: scale(375)
   },
   listContainer: {
