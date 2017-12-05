@@ -4,12 +4,14 @@ import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
 import TabDiscover from '../components/TabDiscover.js';
+import MinibarResults from '../components/MinibarResults.js';
 
 export default class ListResults extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Navbar/>
+        <MinibarResults/>
         <View style={styles.background}>
           <Image style={styles.backgroundColor} source={require("../assets/discoverHome.png")}/>
           <View style={styles.listContainer}>
