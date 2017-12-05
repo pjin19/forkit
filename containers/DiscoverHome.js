@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
-import TabDiscover from '../components/TabDiscover.js';
 
 export default class DiscoverHome extends React.Component {
   render() {
@@ -20,7 +19,6 @@ export default class DiscoverHome extends React.Component {
             <Text style={styles.playText}> Multiplayer </Text>
           </TouchableOpacity>
         </View>
-        <TabDiscover/>
       </View>
     );
   }

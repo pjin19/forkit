@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
-import TabDiscover from '../components/TabDiscover.js';
 import MinibarMap from '../components/MinibarMap.js';
 import {MapView} from 'expo';
 
@@ -22,7 +21,6 @@ export default class ListMap extends React.Component {
                 longitude: -122.409421,
                 latitudeDelta: .05,
                 longitudeDelta: .05,
-
               }}
               >
                 <MapView.Marker
@@ -53,7 +51,6 @@ export default class ListMap extends React.Component {
               </MapView>
           </View>
         </View>
-        <TabDiscover/>
       </View>
     );
   }

@@ -4,7 +4,6 @@ import { Actions } from 'react-native-router-flux';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import { Font } from 'expo';
-import TabDiscover from '../components/TabDiscover.js';
 
 export default class Login extends React.Component {
 
