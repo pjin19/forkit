@@ -8,6 +8,7 @@ import DiscoverHome from './containers/DiscoverHome.js';
 import Eats1 from './containers/Eats1.js';
 import Eats2 from './containers/Eats2.js';
 import Eats3 from './containers/Eats3.js';
+import Algo from './containers/Algo.js';
 
 export default class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends React.Component {
           <Scene key="eats1" component={Eats1} hideNavBar={true}/>
           <Scene key="eats2" component={Eats2} hideNavBar={true}/>
           <Scene key="eats3" component={Eats3} hideNavBar={true}/>
+          <Scene key="algo" component={Algo} hideNavBar={true}/>
         </Scene>
       </Router>
     );

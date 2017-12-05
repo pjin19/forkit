@@ -34,7 +34,7 @@ export default class Eats1 extends React.Component {
               <Text style={styles.optionText}>1 to 3 miles</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={[styles.optionBottom, styles.rowSubContainer]} onPress={Actions.eats2}>
+          <TouchableOpacity style={[styles.optionBottom, styles.rowSubContainer]} onPress={Actions.algo}>
             <Text style={styles.gambleText}> Take a Gamble </Text>
             <Image style={styles.dollarSigns} source={require("../assets/red-dice-512.png")}/>
           </TouchableOpacity>
