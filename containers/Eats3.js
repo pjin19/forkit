@@ -23,9 +23,9 @@ export default class Eats1 extends React.Component {
           <View style={styles.rowSubContainer}>
             <TouchableOpacity style={styles.optionLeft}>
               <View style={styles.rowSubContainer}>
-                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
-                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
-                <Image style={styles.hiker} source={require("../assets/hikerWhite.png")}/>
+                <Image style={styles.hiker} source={require("../assets/Hikerwhite.png")}/>
+                <Image style={styles.hiker} source={require("../assets/Hikerwhite.png")}/>
+                <Image style={styles.hiker} source={require("../assets/Hikerwhite.png")}/>
               </View>
               <Text style={styles.optionText}>Less than 1 mile</Text>
             </TouchableOpacity>
