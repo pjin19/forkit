@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 
-export default class TabDiscover extends React.Component {
+export default class Tabbar extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -53,7 +53,7 @@ export default class TabDiscover extends React.Component {
           alignItems: 'center',
           justifyContent: 'center'
           }}
-          onPress={() => this.selectLeft(Actions.listmap)}>
+          onPress={() => this.selectLeft(Actions.resultlightbox)}>
           <Image style={styles.logoLeft} source={require("../assets/newsfeed.png")}/>
         </TouchableOpacity>
         <TouchableOpacity style={{
@@ -66,7 +66,7 @@ export default class TabDiscover extends React.Component {
           alignItems: 'center',
           justifyContent: 'center'
           }}
-          onPress={() => this.selectMiddle(Actions.listmap)}>
+          onPress={() => this.selectMiddle(Actions.discover)}>
           <Image style={styles.logoMiddle} source={require("../assets/discoverIcon.png")}/>
         </TouchableOpacity>
         <TouchableOpacity style={{
@@ -78,7 +78,7 @@ export default class TabDiscover extends React.Component {
           alignItems: 'center',
           justifyContent: 'center'
           }}
-          onPress={() => this.selectRight(Actions.listmap)}>
+          onPress={() => this.selectRight(Actions.profile)}>
           <Image style={styles.logoRight} source={require("../assets/profile.png")}/>
         </TouchableOpacity>
       </View>
