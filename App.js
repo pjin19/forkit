@@ -20,6 +20,7 @@ import FavoriteList from './containers/FavoriteList.js';
 import MyForks from './containers/MyForks.js';
 import FriendList from './containers/FriendList.js';
 import Search from './containers/Search.js';
+import PersonalData from './containers/PersonalData.js';
 
 
 export default class App extends React.Component {
@@ -45,6 +46,7 @@ export default class App extends React.Component {
               <Scene key="favoritelist" component={FavoriteList} hideNavBar={true}/>
               <Scene key="myforks" component={MyForks} hideNavBar={true}/>
               <Scene key="friendlist" component={FriendList} hideNavBar={true}/>
+              <Scene key="personaldata" component={PersonalData} hideNavBar={true}/>
               <Scene key="search" component={Search} hideNavBar={true}/>
             </Scene>
           </Scene>
