@@ -34,7 +34,7 @@ export default class Profile extends React.Component {
               <TouchableOpacity onPress={Actions.friendlist}><Text>FRIENDS</Text></TouchableOpacity>
             </View>
             <View style={styles.icon}>
-              <TouchableOpacity onPress={Actions.search}><Text>SEARCH</Text></TouchableOpacity>
+              <TouchableOpacity onPress={Actions.personaldata}><Text>DATA</Text></TouchableOpacity>
             </View>
           </View>
         </View>
