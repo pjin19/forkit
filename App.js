@@ -14,6 +14,13 @@ import ListMap from './containers/ListMap.js';
 import SingleResult from './containers/SingleResult.js';
 import ResultLightbox from './containers/ResultLightbox.js';
 import Tabbar from './components/Tabbar.js';
+import Profile from './containers/Profile.js';
+import Preferences from './containers/Preferences.js';
+import FavoriteList from './containers/FavoriteList.js';
+import MyForks from './containers/MyForks.js';
+import FriendList from './containers/FriendList.js';
+import Search from './containers/Search.js';
+
 
 export default class App extends React.Component {
   render() {
@@ -33,6 +40,12 @@ export default class App extends React.Component {
               <Scene key="listresults" component={ListResults} hideNavBar={true}/>
               <Scene key="listmap" component={ListMap} hideNavBar={true}/>
               <Scene key="singleresult" component={SingleResult} hideNavBar={true}/>
+              <Scene key="profile" component={Profile} hideNavBar={true}/>
+              <Scene key="preferences" component={Preferences} hideNavBar={true}/>
+              <Scene key="favoritelist" component={FavoriteList} hideNavBar={true}/>
+              <Scene key="myforks" component={MyForks} hideNavBar={true}/>
+              <Scene key="friendlist" component={FriendList} hideNavBar={true}/>
+              <Scene key="search" component={Search} hideNavBar={true}/>
             </Scene>
           </Scene>
           <Scene key="resultlightbox" component={ResultLightbox} hideNavBar={true}/>
