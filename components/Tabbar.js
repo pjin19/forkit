@@ -101,7 +101,7 @@ export default class Tabbar extends React.Component {
           justifyContent: 'center'
           }}
           onPress={() => this.selectSearch(Actions.search)}>
-          <Text style={styles.logoSearch}>Search</Text>
+          <Image style={styles.logoSearch} source={require("../assets/search.png")}/>
         </TouchableOpacity>
       </View>
     );
