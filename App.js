@@ -21,7 +21,10 @@ import MyForks from './containers/MyForks.js';
 import FriendList from './containers/FriendList.js';
 import Search from './containers/Search.js';
 import PersonalData from './containers/PersonalData.js';
-
+import EventForm from './containers/EventForm.js';
+import StatusPage from './containers/StatusPage.js';
+import TestQuestion from './containers/TestQuestion.js';
+import MultiResult from './containers/MultiResult.js';
 
 export default class App extends React.Component {
   render() {
@@ -48,6 +51,10 @@ export default class App extends React.Component {
               <Scene key="friendlist" component={FriendList} hideNavBar={true}/>
               <Scene key="personaldata" component={PersonalData} hideNavBar={true}/>
               <Scene key="search" component={Search} hideNavBar={true}/>
+              <Scene key="eventform" component={EventForm} hideNavBar={true}/>
+              <Scene key="statuspage" component={StatusPage} hideNavBar={true}/>
+              <Scene key="testquestion" component={TestQuestion} hideNavBar={true} hideTabBar={true}/>
+              <Scene key="multiresult" component={MultiResult} hideNavBar={true}/>
             </Scene>
           </Scene>
           <Scene key="resultlightbox" component={ResultLightbox} hideNavBar={true}/>

@@ -15,7 +15,7 @@ export default class DiscoverHome extends React.Component {
           <TouchableOpacity style={styles.playButton} onPress={Actions.eats1}>
             <Text style={styles.playText}> Single Player </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.playButtonBottom} onPress={Actions.eats1}>
+          <TouchableOpacity style={styles.playButtonBottom} onPress={Actions.eventform}>
             <Text style={styles.playText}> Multiplayer </Text>
           </TouchableOpacity>
         </View>
