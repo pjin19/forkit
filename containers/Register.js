@@ -4,8 +4,72 @@ import { Actions } from 'react-native-router-flux';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import { Font } from 'expo';
+import axios from 'axios';
+import bcrypt from 'bcryptjs'
 
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      first: '',
+      last: '',
+      email: '',
+      password: ''
+    };
+  }
+
+  firstName(ev) {
+    ev.preventDefault();
+    this.setState({
+      first: ev.target.value
+    });
+  }
+
+  lastName(ev) {
+    ev.preventDefault();
+    this.setState({
+      last: ev.target.value
+    });
+  }
+
+  emailChange(ev) {
+    ev.preventDefault();
+    this.setState({
+      email: ev.target.value
+    });
+  }
+
+  passwordChange(ev) {
+    ev.preventDefault();
+    this.setState({
+      password: ev.target.value
+    });
+  }
+
+  register(ev) {
+    ev.preventDefault();
+    var salt = bcrypt.genSaltSync(10);
+    axios({
+      method: 'POST',
+      url: 'https://guarded-dawn-44803.herokuapp.com/db/insertrows',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        password: '$BIG_SHAQ102$',
+        tableName: 'users',
+        params: `{"firstname": "${this.state.first}", "lastname":"${this.state.last}","email":"${this.state.email}","password":"${bcrypt.hashSync(this.state.password, salt)}"}`
+      }
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(e => {
+      console.log('ERROR', e);
+    })
+  }
+
 
   render() {
     return (
@@ -15,23 +79,23 @@ export default class Login extends React.Component {
           <View style={styles.inputForm}>
             <View style={styles.input}>
               <Image style={styles.userIcon} source={require("../assets/username.png")}/>
-              <TextInput style={styles.inputText} placeholder={'First Name'}/>
+              <TextInput style={styles.inputText} placeholder={'First Name'} onChangeText={(ev) => this.firstName(ev)}/>
             </View>
             <View style={styles.input}>
               <Image style={styles.userIcon} source={require("../assets/username.png")}/>
-              <TextInput style={styles.inputText} placeholder={'Last Name'}/>
+              <TextInput style={styles.inputText} placeholder={'Last Name'} onChangeText={(ev) => this.lastName(ev)}/>
             </View>
             <View style={styles.input}>
-              <Image style={styles.userIcon} source={require("../assets/username.png")}/>
+              <Image style={styles.userIcon} source={require("../assets/username.png")} onChangeText={(ev) => this.emailChange(ev)}/>
               <TextInput style={styles.inputText} placeholder={'Email'}/>
             </View>
             <View style={styles.input}>
               <Image style={styles.passIcon} source={require("../assets/password.png")}/>
-              <TextInput style={styles.inputText} placeholder={'Password'}/>
+              <TextInput style={styles.inputText} placeholder={'Password'} onChangeText={(ev) => this.passwordChange(ev)}/>
             </View>
           </View>
           <View style={styles.buttonForm}>
-            <TouchableOpacity style={styles.loginButton} onPress={Actions.discover}>
+            <TouchableOpacity style={styles.loginButton} onPress={(ev) => this.register(ev)}>
               <Text style={styles.loginText}> CREATE ACCOUNT </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fbButton} onPress={Actions.login}>

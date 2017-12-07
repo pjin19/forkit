@@ -2,6 +2,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
+    "bcryptjs": "^2.4.3",
     "expo": "^23.0.6",
     "react": "^16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
