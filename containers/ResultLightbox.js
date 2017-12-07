@@ -9,17 +9,17 @@ export default class ResultLightbox extends React.Component {
       <View style={styles.container}>
         <View style={styles.transportContainer}>
           <TouchableOpacity style={styles.button}>
-            <Text>GOOG</Text>
+            <Image style={styles.icon} source={require("../assets/google-maps.png")}/>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text>UBER</Text>
+            <Image style={styles.icon} source={require("../assets/uber.png")}/>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text>LYFT</Text>
+            <Image style={styles.icon} source={require("../assets/lyft.png")}/>
           </TouchableOpacity>
         </View>
         <View style={styles.closeContainer}>
-          <TouchableOpacity onPress={Actions.pop}><Text style={{fontSize: 20}}>Close</Text></TouchableOpacity>
+          <TouchableOpacity onPress={Actions.pop}><Text style={styles.textStyle}>Close</Text></TouchableOpacity>
         </View>
       </View>
     );
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'white',
+    backgroundColor: '#00042E',
     display: 'flex'
   },
   transportContainer: {
@@ -49,9 +49,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: moderateScale(1),
-    borderRadius: 20,
     margin: moderateScale(5)
+  },
+  textStyle: {
+    fontSize: moderateScale(20),
+    fontFamily: 'Futura',
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  icon: {
+    borderRadius: 20,
+    height: verticalScale(100),
+    width: scale(100)
   }
 });

@@ -4,6 +4,8 @@ import { Actions } from 'react-native-router-flux';
 import { scale, verticalScale, moderateScale } from '../scaler.js';
 import Navbar from '../components/Navbar.js';
 import {MapView} from 'expo';
+import StarRating from 'react-native-star-rating';
+
 
 export default class SingleResult extends React.Component {
   render() {
@@ -14,25 +16,40 @@ export default class SingleResult extends React.Component {
           <Image style={styles.backgroundColor} source={require("../assets/discoverHome.png")}/>
           <View style={styles.nameContainer}>
             <View style={styles.star}>
-              <TouchableOpacity><Image style={{height: verticalScale(40), width: scale(40)}}source={require("../assets/soccer.png")}/></TouchableOpacity>
+              <StarRating
+                disabled={false}
+                maxStars={1}
+                rating={0}
+                starSize={40}
+                starColor={'white'}
+                emptyStarColor={'white'}
+              />
             </View>
             <View style={styles.name}>
-              <Text style={{fontSize: moderateScale(20)}}>Name of the Restaurant</Text>
+              <Text style={styles.textStyle}>Name of the Restaurant testing again if its long</Text>
             </View>
           </View>
           <View style={styles.detailsContainer}>
             <View style={styles.details}>
-              <Text>123-456-7890</Text>
-              <Text>Star Star Star Star Star</Text>
-              <Text>1,000 reviews on Yelp</Text>
-              <Text>100 miles from you</Text>
+              <Image style={styles.restaurantIcon} source={require("../assets/burger.jpg")}/>
+              <Text style={styles.textStyle}>123-456-7890</Text>
+              <StarRating
+                disabled={true}
+                maxStars={5}
+                rating={4}
+                starSize={20}
+                starColor={'#00042E'}
+                emptyStarColor={'#00042E'}
+              />
+              <Text style={styles.textStyle}>1,000 reviews on Yelp</Text>
+              <Text style={styles.textStyle}>100 miles from you</Text>
             </View>
             <View style={styles.restaurantButtons}>
               <TouchableOpacity style={styles.yelp}>
-                <Text>Yelp</Text>
+                <Image style={styles.yelpIcon} source={require("../assets/yelp.jpg")}/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.openTable}>
-                <Text>Open Table</Text>
+                <Image style={styles.openTableIcon} source={require("../assets/openTable.png")}/>
               </TouchableOpacity>
             </View>
           </View>
@@ -64,15 +81,15 @@ export default class SingleResult extends React.Component {
           </View>
           <View style={styles.backContainer}>
             <TouchableOpacity style={styles.restart} onPress={Actions.discover}>
-              <Text>Restart Search</Text>
+              <Text style={styles.buttonStyle}>Restart Search</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.back} onPress={Actions.listresults}>
-              <Text>Back to Results</Text>
+              <Text style={styles.buttonStyle}>Back to Results</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.goContainer}>
             <TouchableOpacity style={styles.fork} onPress={Actions.resultlightbox}>
-              <Text>Fork It</Text>
+              <Text style={styles.buttonStyle}>Fork It</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -101,37 +118,34 @@ const styles = StyleSheet.create({
   },
   nameContainer: {
     flex: 1,
-    borderBottomColor: 'white',
-    borderBottomWidth: moderateScale(1),
+    borderBottomColor: "#00042E",
+    borderBottomWidth: moderateScale(2),
     width: scale(375),
     flexDirection: 'row'
   },
   detailsContainer: {
     flex: 3,
-    borderBottomColor: 'white',
-    borderBottomWidth: moderateScale(1),
+    borderBottomColor: "#00042E",
+    borderBottomWidth: moderateScale(2),
     width: scale(375),
     flexDirection: 'row'
   },
   mapContainer: {
     flex: 3,
-    borderBottomColor: 'white',
-    borderBottomWidth: moderateScale(1),
+    borderBottomColor: "#00042E",
+    borderBottomWidth: moderateScale(2),
     width: scale(375),
     justifyContent: 'center',
     alignItems: 'center'
   },
   backContainer: {
     flex: 1,
-    borderBottomColor: 'white',
-    borderBottomWidth: moderateScale(1),
-    width: scale(375),
     flexDirection: 'row'
   },
   goContainer: {
     flex: 1,
-    borderBottomColor: 'white',
-    borderBottomWidth: moderateScale(1),
+    justifyContent: 'center',
+    alignItems: 'center',
     width: scale(375)
   },
   star: {
@@ -144,7 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   details: {
-    flex: 2,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -155,26 +169,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: moderateScale(1),
-    borderRadius: 20,
-    margin: moderateScale(5)
+    margin: moderateScale(5),
   },
   openTable: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: moderateScale(1),
     borderRadius: 20,
-    margin: moderateScale(5)
+    margin: moderateScale(5),
+    position: 'relative'
   },
   restart: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: moderateScale(1),
+    backgroundColor: '#00042E',
     borderRadius: 20,
     margin: moderateScale(5)
   },
@@ -182,8 +191,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: moderateScale(1),
+    backgroundColor: '#00042E',
     borderRadius: 20,
     margin: moderateScale(5)
   },
@@ -191,9 +199,35 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
-    borderWidth: moderateScale(1),
+    backgroundColor: '#00042E',
     borderRadius: 20,
-    margin: moderateScale(5)
+    margin: moderateScale(5),
+    width: scale(375/2)
+  },
+  textStyle: {
+    fontSize: moderateScale(18),
+    fontFamily: 'Futura',
+    color: 'white'
+  },
+  buttonStyle: {
+    fontSize: moderateScale(20),
+    fontFamily: 'Futura',
+    color: 'white'
+  },
+  restaurantIcon: {
+    height: verticalScale(80),
+    width: scale(80),
+    borderRadius: 40,
+    opacity: 0.7
+  },
+  yelpIcon: {
+    height: verticalScale(55),
+    width: scale(140),
+    borderRadius: 20
+  },
+  openTableIcon: {
+    height: verticalScale(55),
+    width: scale(140),
+    borderRadius: 20
   }
 });
