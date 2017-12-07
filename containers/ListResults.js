@@ -40,7 +40,7 @@ export default class ListResults extends React.Component {
               </View>
               <View style={styles.restaurantInfo}>
                 <View style={styles.restaurantName}>
-                  <Text>Restaurant Name</Text>
+                  <Text style={styles.restNameText}>Restaurant Name</Text>
                 </View>
                 <View style={styles.restaurantDetails}>
                   <View style={styles.restaurantStats}>
@@ -134,6 +134,10 @@ const styles = StyleSheet.create({
     borderBottomColor: 'white',
     borderBottomWidth: moderateScale(1),
     justifyContent: 'center'
+  },
+  restNameText: {
+    color: 'white',
+    fontSize: moderateScale(12)
   },
   restaurantDetails: {
     flex: 3,
